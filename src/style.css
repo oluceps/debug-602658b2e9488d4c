@@ -1,0 +1,30 @@
+@import "./styles/transformer.css";
+
+a {
+	@apply underline-offset-4;
+}
+
+@layer base {
+	html {
+		color-scheme: light;
+	}
+
+	html.dark {
+		color-scheme: dark;
+	}
+
+	img {
+		@apply rounded-xl;
+	}
+}
+
+@layer utilities {
+	.heading {
+		@apply shadow-none text-slate-900 !important;
+	}
+
+	.heading:hover::after {
+		@apply opacity-80;
+		content: " #";
+	}
+}

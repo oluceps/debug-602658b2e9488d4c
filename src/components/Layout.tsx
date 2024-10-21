@@ -26,21 +26,8 @@ export function Layout(props: ParentProps) {
 	const isRoot = () => currentPath() === "/";
 
 	return (
-		<div>
-			<div class="flex flex-col bg-zinc-50 dark:bg-[#171717] min-h-screen items-center">
-				<Switch
-					fallback={
-						<div class="flex flex-col flex-1 grow pb-12 w-11/12 md:w-full">
-						</div>
-					}
-				>
-					<Match when={isRoot()}>
-						<QuickLinks title="" icon={<div />} href="" />
-					</Match>
-				</Switch>
-				<Footer />
-			</div>
-		</div>
+
+		<QuickLinks title="" icon={<div />} href="" />
 
 	);
 }

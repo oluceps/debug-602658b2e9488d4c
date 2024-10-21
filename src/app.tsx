@@ -15,7 +15,8 @@ export default function App() {
 				<main>
 					<ErrorBoundary
 						fallback={(e) =>
-							e.message == 404 ? <NotFound /> : <IErr>{e.message}</IErr>
+							e.message == 404 ? <NotFound /> : <div />
+							// <IErr>{e.message}</IErr>
 							// <div />
 						}
 					>

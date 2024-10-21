@@ -27,7 +27,7 @@ export default function App() {
 							</div>
 						}
 					>
-						<QuickLinks title="" icon={<div />} href="" />
+						<QuickLinks />
 					</ErrorBoundary>
 				</main>
 			)}

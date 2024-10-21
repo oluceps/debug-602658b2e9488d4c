@@ -13,6 +13,7 @@ import Root from "./Root";
 import { PageStateProvider, TaxoStateProvider } from "./PageState";
 import Me from "~/ingredients/me";
 import Footer from "./Footer";
+import { QuickLinks } from "~/ingredients/quick-link";
 
 const BackTopBtn = lazy(() => import("./BackTopBtn"));
 const Header = lazy(() => import("./Header"));
@@ -27,7 +28,7 @@ export function Layout(props: ParentProps) {
 
 	const isRoot = () => currentPath() === "/";
 	const isTaxo = () => currentPath().replaceAll("/", "") === "taxonomy";
-	const isMe = () => currentPath().replaceAll("/", "") === "me";
+	// const isMe = () => currentPath().replaceAll("/", "") === "me";
 
 	return (
 		<MetaProvider>
@@ -35,9 +36,6 @@ export function Layout(props: ParentProps) {
 				<TaxoStateProvider>
 					<div>
 						<div class="flex flex-col bg-zinc-50 dark:bg-[#171717] min-h-screen items-center">
-							<Suspense>
-								<Header sticky={isRoot()} />
-							</Suspense>
 							<Switch
 								fallback={
 									<div class="flex flex-col flex-1 grow pb-12 w-11/12 md:w-full">
@@ -45,10 +43,7 @@ export function Layout(props: ParentProps) {
 								}
 							>
 								<Match when={isRoot()}>
-									<Root />
-								</Match>
-								<Match when={isMe()}>
-									<Me />
+									<QuickLinks title="" icon={<div />} href="" />
 								</Match>
 							</Switch>
 

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "solid-js";
+import { lazy } from "solid-js";
 
 const BackTopBtn = lazy(() => import("./BackTopBtn"));
 import { QuickLinks } from "~/ingredients/quick-link";

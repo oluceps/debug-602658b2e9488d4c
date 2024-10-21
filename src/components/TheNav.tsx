@@ -1,12 +1,10 @@
 import { cache, createAsync, useNavigate } from "@solidjs/router";
 import { createEffect, createSignal } from "solid-js";
 import { Motion, Presence } from "solid-motionone";
-import cfg from "../constant";
 import { useLocation } from "@solidjs/router";
 import { twMerge } from "tailwind-merge";
 
 export default function Home() {
-	const menu = cfg.menu;
 
 	// if (limit()) {
 	// 	menu.splice(0, 1);
@@ -33,31 +31,6 @@ export default function Home() {
 			}}
 			class={`bg-background flex items-center justify-end relative px-2 py-1.5`}
 		>
-			{menu.map((tab, idx) => (
-				<button
-					ref={(el) => {
-						tabRefs()[idx] = el;
-					}}
-					class={twMerge(
-						`bg-transparent font-sans px-1.5 py-1 z-10 text-neutral-500 hover:text-neutral-600 rounded-md transition ease-in delay-200`,
-						useLocation().pathname == tab.url &&
-							!hoveredTab() &&
-							useLocation().pathname.length != 1
-							? "bg-sprout-100 text-neutral-700/80"
-							: "",
-					)}
-					onpointerenter={() => {
-						setHoveredIdx(idx);
-					}}
-					onclick={() =>
-						tab.url.startsWith("/")
-							? navigate(tab.url)
-							: window.open(tab.url, "_blank")
-					}
-				>
-					{tab.name}
-				</button>
-			))}
 			{hoveredTab() ? (
 				<Presence>
 					<Motion.button

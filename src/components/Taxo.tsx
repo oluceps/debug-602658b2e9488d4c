@@ -7,7 +7,6 @@ import {
 	Suspense,
 } from "solid-js";
 import { A, cache, createAsync } from "@solidjs/router";
-import cfg from "../constant";
 import { Link, Meta, MetaProvider, Title } from "@solidjs/meta";
 import { useTaxoState } from "./PageState";
 import { isIn } from "~/lib/fn";

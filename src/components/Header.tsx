@@ -1,6 +1,5 @@
 import { A } from "@solidjs/router";
 import { createEffect, createSignal, Suspense, type Component } from "solid-js";
-import cfg from "../constant";
 import TheNav from "./TheNav";
 import { useWindowScrollPosition } from "@solid-primitives/scroll";
 import { twMerge } from "tailwind-merge";
@@ -29,9 +28,6 @@ const Header: Component<{ sticky: boolean }> = (props) => {
 							afterHover(),
 						)}
 					/>
-					<div class="absolute leading-none text-neutral-600 dark:text-slate-200 text-nowrap font-sans">
-						{cfg.title}
-					</div>
 				</div>
 			</A>
 			<div class="pointer-events-auto backdrop-blur-sm rounded-bl-2xl">

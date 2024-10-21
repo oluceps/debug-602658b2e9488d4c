@@ -1,9 +1,10 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { ErrorBoundary } from "solid-js";
+import { ErrorBoundary, lazy } from "solid-js";
 import NotFound from "./components/NotFound";
 import "virtual:uno.css";
-import "@unocss/reset/tailwind-compat.css";
+const BackTopBtn = lazy(() => import("./components/BackTopBtn"));
+import { QuickLinks } from "~/ingredients/quick-link";
 
 export default function App() {
 	return (
@@ -15,7 +16,7 @@ export default function App() {
 							<NotFound />
 						}
 					>
-						<div />
+						<QuickLinks title="" icon={<div />} href="" />
 					</ErrorBoundary>
 				</main>
 			)}

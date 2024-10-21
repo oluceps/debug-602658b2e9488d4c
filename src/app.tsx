@@ -3,7 +3,7 @@ import { FileRoutes } from "@solidjs/start/router";
 import { ErrorBoundary, lazy } from "solid-js";
 import "virtual:uno.css";
 const BackTopBtn = lazy(() => import("./components/BackTopBtn"));
-import { QuickLinks } from "~/ingredients/quick-link";
+import { QuickLinks } from "~/quick-link";
 import { HttpStatusCode } from "@solidjs/start";
 
 export default function App() {

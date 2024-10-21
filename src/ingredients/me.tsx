@@ -1,5 +1,3 @@
-import Online from "./online-indicator";
-import Reveal from "./rand-reveal";
 import cfg from "../constant";
 import { QuickLinks, QuickLinksProps } from "./quick-link";
 import { Link, Meta, MetaProvider, Title } from "@solidjs/meta";
@@ -94,21 +92,10 @@ export default function Me() {
 									)
 								}
 							/>
-							<Online />
 						</div>
 					</div>
 					<div class="text-center md:text-left not-prose flex flex-col leading-snug mx-6 pb-8 md:pb-0 justify-between gap-4 md:gap-6">
 						<div class="text-stone-500 text-3xl md:text-2xl font-bold">
-							<Reveal>Secirian</Reveal>
-						</div>
-						<div class="mx-auto text-[15px] sm:text-[13px] md:ml-px flex flex-col gap-2 sm:gap-1">
-							<div class="text-zinc-500">ZHO / ENG / CDO / JPN</div>
-							<div class="text-zinc-500">BEng 4rd year</div>
-							<div class="text-zinc-500">UTC + 8?</div>
-							<div class="text-zinc-500">she / her</div>
-							<div class="text-zinc-400 not-prose mt-2 md:mt-4">
-								廿一世紀 末日未接近時出生
-							</div>
 						</div>
 					</div>
 				</div>

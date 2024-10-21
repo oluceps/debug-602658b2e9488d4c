@@ -1,4 +1,3 @@
-import { Link, Meta, MetaProvider } from "@solidjs/meta";
 import { lazy, Suspense } from "solid-js";
 import {
 	Match,
@@ -7,9 +6,7 @@ import {
 	createEffect,
 	createSignal,
 } from "solid-js";
-import { SolidLenis } from "lenis-solid";
 import { useLocation } from "@solidjs/router";
-import Root from "./Root";
 import { PageStateProvider, TaxoStateProvider } from "./PageState";
 import Me from "~/ingredients/me";
 import Footer from "./Footer";
@@ -31,30 +28,22 @@ export function Layout(props: ParentProps) {
 	// const isMe = () => currentPath().replaceAll("/", "") === "me";
 
 	return (
-		<MetaProvider>
-			<PageStateProvider>
-				<TaxoStateProvider>
-					<div>
-						<div class="flex flex-col bg-zinc-50 dark:bg-[#171717] min-h-screen items-center">
-							<Switch
-								fallback={
-									<div class="flex flex-col flex-1 grow pb-12 w-11/12 md:w-full">
-									</div>
-								}
-							>
-								<Match when={isRoot()}>
-									<QuickLinks title="" icon={<div />} href="" />
-								</Match>
-							</Switch>
-
-							<Footer />
+		<div>
+			<div class="flex flex-col bg-zinc-50 dark:bg-[#171717] min-h-screen items-center">
+				<Switch
+					fallback={
+						<div class="flex flex-col flex-1 grow pb-12 w-11/12 md:w-full">
 						</div>
-					</div>
-					<Suspense>
-						<BackTopBtn />
-					</Suspense>
-				</TaxoStateProvider>
-			</PageStateProvider>
-		</MetaProvider>
+					}
+				>
+					<Match when={isRoot()}>
+						<QuickLinks title="" icon={<div />} href="" />
+					</Match>
+				</Switch>
+
+				<Footer />
+			</div>
+		</div>
+
 	);
 }

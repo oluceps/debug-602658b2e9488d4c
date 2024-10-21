@@ -24,8 +24,6 @@ export function Layout(props: ParentProps) {
 	});
 
 	const isRoot = () => currentPath() === "/";
-	const isTaxo = () => currentPath().replaceAll("/", "") === "taxonomy";
-	// const isMe = () => currentPath().replaceAll("/", "") === "me";
 
 	return (
 		<div>
@@ -40,7 +38,6 @@ export function Layout(props: ParentProps) {
 						<QuickLinks title="" icon={<div />} href="" />
 					</Match>
 				</Switch>
-
 				<Footer />
 			</div>
 		</div>

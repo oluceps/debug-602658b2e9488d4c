@@ -16,14 +16,6 @@ const BackTopBtn = lazy(() => import("./BackTopBtn"));
 const Header = lazy(() => import("./Header"));
 
 export function Layout(props: ParentProps) {
-	const location = useLocation();
-	const [currentPath, setCurrentPath] = createSignal(location.pathname);
-
-	createEffect(() => {
-		setCurrentPath(location.pathname);
-	});
-
-	const isRoot = () => currentPath() === "/";
 
 	return (
 

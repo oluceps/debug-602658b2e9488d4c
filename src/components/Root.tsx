@@ -1,7 +1,6 @@
 import { Meta, Title } from "@solidjs/meta";
 import type { Component } from "solid-js";
 import cfg from "../constant";
-import { Arti } from "./Arti";
 
 const Root: Component = () => {
 	return (
@@ -9,7 +8,6 @@ const Root: Component = () => {
 			<Title>扉页 - {cfg.title}</Title>
 			<Meta name="description" content={cfg.description} />
 			<Meta name="author" content={cfg.author} />
-			<Arti />
 		</div>
 	);
 };

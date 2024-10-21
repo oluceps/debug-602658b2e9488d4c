@@ -1,7 +1,7 @@
 import { A, cache, createAsync } from "@solidjs/router";
 import { type Component, Index, Show, Suspense } from "solid-js";
 import cfg from "../constant";
-import { docsData } from "solid:collection";
+// import { docsData } from "solid:collection";
 import { useTaxoState } from "./PageState";
 import { twMerge } from "tailwind-merge";
 

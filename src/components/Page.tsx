@@ -3,7 +3,6 @@ import { Show, type ParentComponent, children, Suspense } from "solid-js";
 import cfg from "../constant";
 import { cache, createAsync, useLocation } from "@solidjs/router";
 import { TableOfContents } from "./Toc";
-import { docsData } from "solid:collection";
 
 function formatDate(date: Date | undefined) {
 	if (date === undefined) {

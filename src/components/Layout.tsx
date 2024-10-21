@@ -10,7 +10,6 @@ import {
 } from "solid-js";
 import { SolidLenis } from "lenis-solid";
 import { useLocation } from "@solidjs/router";
-import Page from "./Page";
 import Root from "./Root";
 import { PageStateProvider, TaxoStateProvider } from "./PageState";
 import Taxo from "./Taxo";
@@ -58,7 +57,6 @@ export function Layout(props: ParentProps) {
 							<Switch
 								fallback={
 									<div class="flex flex-col flex-1 grow pb-12 w-11/12 md:w-full">
-										<Page>{props.children}</Page>
 									</div>
 								}
 							>

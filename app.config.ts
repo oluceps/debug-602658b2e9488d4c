@@ -24,33 +24,12 @@ import {
 import rehypeSlug from "rehype-slug";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 
-import docs from "./src/routes/data";
 
 // @ts-expect-error missing types
 import pkg from "@vinxi/plugin-mdx";
 
 const { default: mdx } = pkg;
 
-function docsData() {
-	const virtualModuleId = "solid:collection";
-	const resolveVirtualModuleId = "\0" + virtualModuleId;
-
-	return {
-		name: "solid:collection",
-		resolveId(id: string) {
-			if (id === virtualModuleId) {
-				return resolveVirtualModuleId;
-			}
-		},
-		async load(id: string) {
-			if (id === resolveVirtualModuleId) {
-				return `
-				export const docsData = ${JSON.stringify(docs, null, 2)}
-				`;
-			}
-		},
-	};
-}
 
 export default defineConfig({
 	middleware: "src/middleware/index.ts",
@@ -58,7 +37,6 @@ export default defineConfig({
 	vite: {
 		plugins: [
 			UnoCSS(),
-			docsData(),
 			mdx.withImports({})({
 				define: {
 					"import.meta.env": `'import.meta.env'`,

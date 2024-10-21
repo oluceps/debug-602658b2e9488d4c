@@ -2,7 +2,7 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { ErrorBoundary, lazy } from "solid-js";
 import "virtual:uno.css";
-const BackTopBtn = lazy(() => import("./components/BackTopBtn"));
+const BackTopBtn = lazy(() => import("./BackTopBtn"));
 import { QuickLinks } from "~/quick-link";
 import { HttpStatusCode } from "@solidjs/start";
 

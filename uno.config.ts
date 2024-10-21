@@ -17,6 +17,7 @@ export default defineConfig({
 	presets: [
 		// presetAttributify(), // required when using attributify mode
 		presetUno(), // required
+		// REMOVE below to pass compilation
 		presetIcons()
 	],
 });

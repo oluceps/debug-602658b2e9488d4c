@@ -1,10 +1,10 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { ErrorBoundary, lazy } from "solid-js";
-import NotFound from "./components/NotFound";
 import "virtual:uno.css";
 const BackTopBtn = lazy(() => import("./components/BackTopBtn"));
 import { QuickLinks } from "~/ingredients/quick-link";
+import { HttpStatusCode } from "@solidjs/start";
 
 export default function App() {
 	return (
@@ -13,7 +13,18 @@ export default function App() {
 				<main>
 					<ErrorBoundary
 						fallback={() =>
-							<NotFound />
+							<div class="flex flex-col w-full items-center justify-center h-full grow text-lg text-red-400 leading-none">
+								<HttpStatusCode code={404} />
+								／|、
+								<br />
+								(˙、．7
+								<br />
+								|、～ヽ
+								<br />
+								じしf_,)ノ
+								<br />
+								Page Not Found
+							</div>
 						}
 					>
 						<QuickLinks title="" icon={<div />} href="" />

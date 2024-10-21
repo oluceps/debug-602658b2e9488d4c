@@ -97,47 +97,6 @@ export default defineConfig({
 	presets: [
 		// presetAttributify(), // required when using attributify mode
 		presetUno(), // required
-		presetTypography({
-			cssExtend: {
-				"blockquote p:first-of-type::before": { content: "none" },
-				"blockquote p:first-of-type::after": { content: "none" },
-				"code::before": {
-					content: "none",
-				},
-				"code::after": {
-					content: "none",
-				},
-				'p code': {
-					"background-color": "#e4ecdb",
-					padding: "3px 2px 3px 2px",
-					color: "#182013",
-					"border-radius": "4px",
-					margin: "0px 2px 0px 2px",
-					"vertical-align": "text-top",
-				},
-				a: {
-					"text-decoration-color": "#6f9052",
-				},
-				h1: {
-					margin: "1rem 0", // h1 is always at the top of the page, so only margin 1 * root font size
-					"font-size": "1.65em",
-				},
-				h2: {
-					margin: "1.75em 0 .5em",
-					"font-size": "1.55em",
-				},
-				h3: {
-					margin: "1.5em 0 .5em",
-					"font-size": "1.375em",
-				},
-				h4: {
-					margin: "1em 0",
-					"font-size": "1.125em",
-				},
-			},
-		}),
-		presetWind(),
-		presetRemToPx(),
 		presetIcons()
 	],
 });

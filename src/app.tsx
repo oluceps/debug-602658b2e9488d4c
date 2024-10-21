@@ -2,7 +2,9 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { ErrorBoundary, lazy } from "solid-js";
 import "virtual:uno.css";
+// REMOVE this line pass compile
 const BackTopBtn = lazy(() => import("./BackTopBtn"));
+// REMOVE this line pass compile
 import { QuickLinks } from "~/quick-link";
 import { HttpStatusCode } from "@solidjs/start";
 
@@ -13,7 +15,7 @@ export default function App() {
 				<main>
 					<ErrorBoundary
 						fallback={() =>
-							<div class="flex flex-col w-full items-center justify-center h-full grow text-lg text-red-400 leading-none">
+							<div>
 								<HttpStatusCode code={404} />
 								／|、
 								<br />
